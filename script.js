@@ -2,7 +2,6 @@ let isLogged = true;
 let editIndex = -1;
 let measurements = [];
 
-// Pobieranie danych z LocalStorage (z obsługą błędów)
 try {
     const savedData = localStorage.getItem("sugarData");
     measurements = savedData ? JSON.parse(savedData) : [];
@@ -14,7 +13,6 @@ const form = document.getElementById("sugar-form");
 const tableBody = document.querySelector("#table tbody");
 const chartCanvas = document.getElementById("chart");
 
-// 2. Funkcja ustawiająca datę i godzinę (format HTML5)
 function setNow() {
     const teraz = new Date();
     const rok = teraz.getFullYear();
@@ -27,7 +25,6 @@ function setNow() {
     document.getElementById("time").value = `${godzina}:${minuta}`;
 }
 
-// 3. Rysowanie wykresu na Canvas
 function renderChart() {
     const ctx = chartCanvas.getContext("2d");
     ctx.clearRect(0, 0, chartCanvas.width, chartCanvas.height);
@@ -46,7 +43,6 @@ function renderChart() {
     ctx.stroke();
 }
 
-// 4. Wyświetlanie tabeli z oceną medyczną
 function renderTable() {
     if (!tableBody) return;
     tableBody.innerHTML = "";
@@ -90,7 +86,6 @@ function renderTable() {
         total += m.level;
     });
 
-    // Aktualizacja średniej
     const avgDisplay = document.getElementById("average-info");
     if (avgDisplay) {
         let avg = measurements.length > 0 ? (total / measurements.length).toFixed(1) : 0;
@@ -154,4 +149,5 @@ form.addEventListener("submit", function(e) {
 });
 
 setNow();
+
 renderTable();

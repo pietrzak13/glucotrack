@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <title>GlucoTrack</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-icon"></div>
+            <span class="brand-name">GlucoTrack</span>
+        </div>
+        <nav class="nav">
+            <a href="login.html">Moje konto</a>
+            <a href="#">Historia</a>
+            <a href="#">Podsumowanie</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <h1>Monitoruj poziom cukru każdego dnia – łatwo i wygodnie</h1>
+        <section class="hero-card">
+            <p></p>
+        </section>
+
+        <ul class="features">
+            <li>Nasza strona pozwoli ci na:</li>
+            <li> - szybkie dodawanie pomiarów</li>
+            <li> - wykresy poziomu cukru</li>
+            <li> - analizę dziennego celu</li>
+        </ul>
+
+        <a href="rejestracja.html" class="cta">Zacznij już dziś!</a>
+
+        <section id="app">
+            <h2>Dodaj pomiar</h2>
+            <form id="sugar-form">
+                <label>Poziom cukru (mg/dL):</label>
+                <input type="number" id="level" min="1" max="1500" required />
+                <label>Data:</label>
+                <input type="date" id="date" required />
+                <label>Godzina:</label>
+                <input type="time" id="time" required />
+                <label>Moment pomiaru:</label>
+                <select id="type">
+                  <option value="fasting">Na czczo</option>
+                  <option value="after-meal">Po posiłku (2h)</option>
+                  <option value="before-sleep">Przed snem</option>
+                </select>
+                <button type="submit">Zapisz</button>
+            </form>
+
+            <h2>Historia pomiarów</h2>
+            <table id="table">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Godzina</th>
+                    <th>Moment</th>
+                    <th>Poziom</th>
+                    <th>Status</th>
+                    <th></th> 
+                   </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <br></br>
+            <div id="stats">
+                <h3 id="average-info">Średnia cukru: 0 mg/dL</h3>
+            </div>
+            <h2>Wykres poziomu cukru</h2>
+<div style="background: white; padding: 20px; border-radius: 15px;">
+    <canvas id="chart" width="600" height="200" style="width: 100%; height: auto;"></canvas>
+</div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

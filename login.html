@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Logowanie</title>
+  <link rel="stylesheet" href="form.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-name">GlucoTrack</span>
+  </div>
+  <nav class="nav">
+  <a href="index.html">Start</a>
+  <a href="login.html">Moje konto</a>
+  <a href="dodaj-pomiar.html">Dodaj pomiar</a>
+  <a href="historia.html">Historia</a>
+  <a href="podsumowanie.html">Podsumowanie</a>
+</nav>
+
+</header>
+
+<main class="auth">
+  <h1>Logowanie</h1>
+
+  <form id="loginForm" class="card" action="#" method="POST" novalidate>
+    <label for="loginEmail">E-mail</label>
+    <input
+      id="loginEmail"
+      name="email"
+      type="email"
+      autocomplete="email"
+      required
+      placeholder="np. jan@abc.pl"
+    />
+
+    <label for="loginPassword">Hasło</label>
+    <input
+      id="loginPassword"
+      name="password"
+      type="password"
+      autocomplete="current-password"
+      required
+      minlength="6"
+      placeholder="min. 6 znaków"
+    />
+
+    <p id="loginError" class="error" aria-live="polite"></p>
+
+    <button type="submit">Zaloguj</button>
+
+    <p class="hint">
+      Nie masz konta? <a href="rejestracja.html">Zarejestruj się</a>
+    </p>
+  </form>
+</main>
+
+<script src="auth.js"></script>
+</body>
+</html>

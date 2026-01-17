@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rejestracja</title>
+  <link rel="stylesheet" href="form.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-name">GlucoTrack</span>
+  </div>
+  <nav class="nav">
+  <a href="index.html">Start</a>
+  <a href="login.html">Moje konto</a>
+  <a href="dodaj-pomiar.html">Dodaj pomiar</a>
+  <a href="historia.html">Historia</a>
+  <a href="podsumowanie.html">Podsumowanie</a>
+</nav>
+</header>
+
+<main class="auth">
+  <h1>Rejestracja</h1>
+
+  <form id="registerForm" class="card" action="#" method="POST" novalidate>
+    <label for="regName">Imię</label>
+    <input
+      id="regName"
+      name="name"
+      type="text"
+      required
+      minlength="2"
+      placeholder="np. Anna"
+    />
+
+    <label for="regEmail">E-mail</label>
+    <input
+      id="regEmail"
+      name="email"
+      type="email"
+      autocomplete="email"
+      required
+      placeholder="np. anna@abc.pl"
+    />
+
+    <label for="regPassword">Hasło</label>
+    <input
+      id="regPassword"
+      name="password"
+      type="password"
+      autocomplete="new-password"
+      required
+      minlength="6"
+      placeholder="min. 6 znaków"
+    />
+
+    <label for="regPassword2">Powtórz hasło</label>
+    <input
+      id="regPassword2"
+      name="password2"
+      type="password"
+      autocomplete="new-password"
+      required
+      minlength="6"
+      placeholder="powtórz hasło"
+    />
+
+    <fieldset class="gender">
+  <legend>Płeć</legend>
+
+  <label>
+    <input type="radio" name="gender" value="female" required>
+    Kobieta
+  </label>
+
+  <label>
+    <input type="radio" name="gender" value="male">
+    Mężczyzna
+  </label>
+
+  <label>
+    <input type="radio" name="gender" value="other">
+    Inna / nie chcę podawać
+  </label>
+</fieldset>
+
+
+    <label class="checkbox">
+      <input id="regTerms" name="terms" type="checkbox" required />
+      Akceptuję regulamin
+    </label>
+
+    <p id="registerError" class="error" aria-live="polite"></p>
+
+    <button type="submit">Utwórz konto</button>
+
+    <p class="hint">
+      Masz już konto? <a href="login.html">Zaloguj się</a>
+    </p>
+  </form>
+</main>
+
+<script src="auth.js"></script>
+</body>
+</html>
